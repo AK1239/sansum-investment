@@ -3,10 +3,11 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* Hamburger menu animation */
-.hamburger-line {
-  transform-origin: center;
-  transition: all 0.3s ease-in-out;
+/* Icon transition animation */
+#menu-icon {
+  transition: all 0.3s ease;
 }
 
-/* Add any other custom styles here */
+#menu-icon.fa-times {
+  transform: rotate(90deg) scale(1.2);
+}

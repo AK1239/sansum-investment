@@ -15,7 +15,9 @@
         <div class="flex justify-between items-center h-16">
           <!-- Logo -->
           <div class="flex-shrink-0">
-            <img src="./assets/logo.png" alt="Company Logo" class="h-8 w-auto" />
+            <a href="/">
+              <img src="./images/logo.png" alt="Company Logo" class="h-8 w-auto" />
+            </a>
           </div>
 
           <!-- Desktop Navigation -->
@@ -59,19 +61,8 @@
 
           <!-- Mobile menu button -->
           <div class="md:hidden">
-            <button
-              id="menu-toggle"
-              class="flex flex-col justify-center items-center w-8 h-8 space-y-1.5"
-            >
-              <span
-                class="hamburger-line block w-6 h-0.5 bg-gray-600 transition-all duration-300"
-              ></span>
-              <span
-                class="hamburger-line block w-6 h-0.5 bg-gray-600 transition-all duration-300"
-              ></span>
-              <span
-                class="hamburger-line block w-6 h-0.5 bg-gray-600 transition-all duration-300"
-              ></span>
+            <button id="menu-toggle" class="w-8 h-8 flex items-center justify-center">
+              <i id="menu-icon" class="fas fa-bars text-gray-600 text-xl"></i>
             </button>
           </div>
         </div>
