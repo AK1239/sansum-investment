@@ -1,6 +1,12 @@
 /* Custom transitions for menu */
 .mobile-menu {
-  transition: all 0.3s ease-in-out;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.mobile-menu.show {
+  max-height: 400px; /* Adjust this value based on your content height */
 }
 
 /* Icon transition animation */
@@ -10,4 +16,10 @@
 
 #menu-icon.fa-times {
   transform: rotate(90deg) scale(1.2);
+}
+
+/* Keep your existing icon transitions */
+#menu-icon-bars,
+#menu-icon-times {
+  transition: opacity 0.3s ease;
 }

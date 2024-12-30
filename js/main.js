@@ -5,7 +5,7 @@ const menuIcon = document.getElementById("menu-icon");
 
 menuToggle.addEventListener("click", () => {
   // Toggle mobile menu
-  mobileMenu.classList.toggle("hidden");
+  mobileMenu.classList.toggle("show");
 
   // Toggle between hamburger and X icons
   menuIcon.classList.toggle("fa-bars");
@@ -15,7 +15,7 @@ menuToggle.addEventListener("click", () => {
 // Close mobile menu when clicking outside
 document.addEventListener("click", (e) => {
   if (!menuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-    mobileMenu.classList.add("hidden");
+    mobileMenu.classList.remove("show");
 
     // Reset to hamburger icon
     menuIcon.classList.add("fa-bars");
