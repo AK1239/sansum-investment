@@ -1,25 +1,20 @@
-/* Custom transitions for menu */
 .mobile-menu {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
+  transition: max-height 0.4s ease-out, visibility 0.4s, opacity 0.4s ease-out;
+  opacity: 0;
 }
 
 .mobile-menu.show {
-  max-height: 400px; /* Adjust this value based on your content height */
+  max-height: 400px;
+  opacity: 1;
+  transition: max-height 0.4s ease-in, visibility 0.4s, opacity 0.4s ease-in;
 }
 
-/* Icon transition animation */
 #menu-icon {
   transition: all 0.3s ease;
 }
 
 #menu-icon.fa-times {
   transform: rotate(90deg) scale(1.2);
-}
-
-/* Keep your existing icon transitions */
-#menu-icon-bars,
-#menu-icon-times {
-  transition: opacity 0.3s ease;
 }
