@@ -2,7 +2,12 @@
 module.exports = {
   content: ["./*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "sansum-blue": "#1e3c8a",
+        "sansum-red": "#e40010",
+      },
+    },
   },
   plugins: [],
 };
