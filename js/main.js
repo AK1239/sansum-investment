@@ -27,3 +27,23 @@ function toggleMobileProducts() {
   const mobileProducts = document.getElementById("mobile-products");
   mobileProducts.classList.toggle("hidden");
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Get all navigation links
+  const navLinks = document.querySelectorAll('nav a:not([href="#"])');
+
+  // Add click handler to each link
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
+      // Remove active class from all links
+      navLinks.forEach((l) => l.classList.remove("active"));
+      // Add active class to clicked link
+      e.target.classList.add("active");
+    });
+
+    // Set active class for current page
+    if (link.href === window.location.href) {
+      link.classList.add("active");
+    }
+  });
+});

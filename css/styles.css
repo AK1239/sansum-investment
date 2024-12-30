@@ -18,3 +18,8 @@
 #menu-icon.fa-times {
   transform: rotate(90deg) scale(1.2);
 }
+
+.active {
+  color: #1e40af;
+  font-weight: 600;
+}
