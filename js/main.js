@@ -47,3 +47,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+function handleResize() {
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileProducts = document.getElementById("mobile-products");
+  const menuIcon = document.getElementById("menu-icon");
+
+  // Check if window width is greater than or equal to 768px (md breakpoint in Tailwind)
+  if (window.innerWidth >= 768) {
+    mobileMenu.classList.remove("show");
+    mobileProducts.classList.add("hidden");
+    menuIcon.classList.remove("fa-times");
+    menuIcon.classList.add("fa-bars");
+  }
+}
+
+// Add event listener for window resize
+window.addEventListener("resize", handleResize);
