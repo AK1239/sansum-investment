@@ -64,3 +64,24 @@ function handleResize() {
 
 // Add event listener for window resize
 window.addEventListener("resize", handleResize);
+
+function typeText() {
+  const text = "Every Drop is a Gift from Nature";
+  const typedTextElement = document.getElementById("typed-text");
+  const cursor = document.querySelector(".cursor");
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      typedTextElement.textContent += text.charAt(index);
+      index++;
+      setTimeout(type, 80);
+    } else {
+      cursor.style.display = "none"; // Hide cursor after typing is complete
+    }
+  }
+
+  type();
+}
+
+document.addEventListener("DOMContentLoaded", typeText);
