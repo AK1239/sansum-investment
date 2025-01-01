@@ -7,7 +7,7 @@
     <link rel="icon" href="./images/logo.png" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
@@ -125,32 +125,123 @@
     <!-- Add padding to body content to account for fixed navbar -->
     <div class="pt-16">
       <!-- Hero Section -->
-      <div class="container mx-auto px-4 py-12 md:py-24">
-        <div class="flex flex-col md:flex-row items-center justify-between gap-8">
-          <!-- Left Side Content -->
-          <div class="flex-1 text-center md:text-left">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              <span id="typed-text"></span><span class="cursor">|</span>
-            </h1>
-            <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl">
-              Experience the pure essence of nature with Sansum's premium beverages. Our commitment
-              to quality ensures that every sip brings you closer to nature's perfection.
-            </p>
-            <button
-              class="bg-sansum-blue hover:bg-blue-800 text-white font-semibold py-3.5 px-8 rounded-full transition duration-300 shadow-lg hover:shadow-xl"
-            >
-              Explore Our Products
-            </button>
-          </div>
+      <div class="bg-gray-100 w-full px-4 py-12 md:py-24">
+        <div class="container mx-auto">
+          <div class="flex flex-col md:flex-row items-center justify-between gap-16 md:gap-8">
+            <!-- Left Side Content -->
+            <div class="flex-1 text-center md:text-left">
+              <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6"
+              >
+                <span id="typed-text"></span><span class="cursor">|</span>
+              </h1>
+              <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl">
+                Experience the pure essence of nature with Sansum's premium beverages. Our
+                commitment to quality ensures that every sip brings you closer to nature's
+                perfection.
+              </p>
+              <button
+                class="bg-sansum-blue hover:bg-blue-800 text-white font-semibold py-3.5 px-8 rounded-full transition duration-300 shadow-lg hover:shadow-xl md:text-lg"
+              >
+                Explore Our Products
+              </button>
+            </div>
 
-          <!-- Right Side Images -->
-          <div class="flex-1 flex justify-center items-center gap-4 md:gap-8">
-            <div class="transform hover:scale-105 transition duration-300">
-              <img src="./images/sodas.png" alt="Sansum Water Bottle" />
+            <!-- Right Side Images -->
+            <div class="flex-1 flex justify-center items-center gap-4 md:gap-8">
+              <div class="transform hover:scale-105 transition duration-300">
+                <img src="./images/sodas.png" alt="Sansum Water Bottle" />
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <section class="py-16 pb-20">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-bold text-center mb-12">Our Premium Products</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 opacity-0 animate-fade-in">
+            <!-- Product Card 1 -->
+            <div class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition duration-300">
+              <img
+                src="./images/small-bottle.png"
+                alt="Pure Water"
+                class="mx-auto mb-4 h-48 object-contain"
+              />
+              <h3 class="text-xl font-semibold mb-2">Pure Drinking Water</h3>
+              <p class="text-gray-600">
+                Crystal clear water sourced from natural springs, purified to perfection.
+              </p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition duration-300">
+              <img
+                src="./images/sodas.png"
+                alt="Pure Water"
+                class="mx-auto mb-4 h-48 object-contain"
+              />
+              <h3 class="text-xl font-semibold mb-2">Pure Drinking Water</h3>
+              <p class="text-gray-600">
+                Crystal clear water sourced from natural springs, purified to perfection.
+              </p>
+            </div>
+            <div class="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition duration-300">
+              <img
+                src="./images/energy-drink.png"
+                alt="Pure Water"
+                class="mx-auto mb-4 h-48 object-contain"
+              />
+              <h3 class="text-xl font-semibold mb-2">Pure Drinking Water</h3>
+              <p class="text-gray-600">
+                Crystal clear water sourced from natural springs, purified to perfection.
+              </p>
+            </div>
+            <!-- Similar cards for Juices and Carbonated Drinks -->
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 bg-sansum-blue">
+        <div class="container mx-auto md:px-4 px-6">
+          <h2 class="text-3xl font-bold text-center mb-12 text-white">Why Choose Sansum</h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Quality Card -->
+            <div
+              class="bg-white rounded-lg p-8 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl shadow-lg"
+            >
+              <i class="fas fa-award text-5xl text-sansum-blue mb-6"></i>
+              <h3 class="text-xl font-bold mb-4 text-gray-800">Premium Quality</h3>
+              <p class="text-gray-600">
+                Experience the finest beverages crafted with carefully selected ingredients and
+                state-of-the-art purification processes.
+              </p>
+            </div>
+
+            <!-- Variety Card -->
+            <div
+              class="bg-white rounded-lg p-8 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl shadow-lg"
+            >
+              <i class="fa-solid fa-bottle-water text-5xl text-sansum-blue mb-6"></i>
+              <h3 class="text-xl font-bold mb-4 text-gray-800">Wide Selection</h3>
+              <p class="text-gray-600">
+                From pure drinking water to delicious juices and refreshing sodas, we offer
+                something for every taste and occasion.
+              </p>
+            </div>
+
+            <!-- Trust Card -->
+            <div
+              class="bg-white rounded-lg p-8 text-center transform transition duration-300 hover:scale-105 hover:shadow-2xl shadow-lg"
+            >
+              <i class="fas fa-leaf text-5xl text-sansum-blue mb-6"></i>
+              <h3 class="text-xl font-bold mb-4 text-gray-800">Natural Goodness</h3>
+              <p class="text-gray-600">
+                Every drop is a gift from nature, carefully preserved to deliver pure refreshment
+                straight to your doorstep.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <script src="./js/main.js"></script>
