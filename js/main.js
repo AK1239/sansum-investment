@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("active");
     }
   });
+
+  handleScrollAnimation();
 });
 
 function handleResize() {
@@ -85,3 +87,25 @@ function typeText() {
 }
 
 document.addEventListener("DOMContentLoaded", typeText);
+
+function handleScrollAnimation() {
+  const sections = document.querySelectorAll(".fade-in-section");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        // Only trigger animation when element is 40% visible
+        if (entry.intersectionRatio > 0.4) {
+          entry.target.classList.add("is-visible");
+        }
+      });
+    },
+    {
+      threshold: 0.4, // 40% visibility threshold
+    }
+  );
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+}
