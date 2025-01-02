@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   handleScrollAnimation();
+  startCountersWhenVisible();
 });
 
 function handleResize() {
@@ -114,3 +115,48 @@ function handleScrollAnimation() {
 window.addEventListener("resize", () => {
   handleScrollAnimation();
 });
+
+function animateCounter(element, start, end, duration) {
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+
+    // Use different formatting based on the size of the number
+    const currentNumber = Math.floor(progress * (end - start) + start);
+    if (end >= 1000) {
+      element.textContent = (currentNumber / 1000).toFixed(1) + "K";
+    } else {
+      element.textContent = currentNumber;
+    }
+
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+function startCountersWhenVisible() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const yearsCounter = document.getElementById("yearsCounter");
+          const customersCounter = document.getElementById("customersCounter");
+
+          animateCounter(yearsCounter, 0, 5, 1000);
+          animateCounter(customersCounter, 0, 10000, 1500);
+
+          observer.disconnect();
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  const statsContainer = document.querySelector(".absolute.bottom-4");
+  if (statsContainer) {
+    observer.observe(statsContainer);
+  }
+}
