@@ -56,7 +56,7 @@ function handleResize() {
   const mobileProducts = document.getElementById("mobile-products");
   const menuIcon = document.getElementById("menu-icon");
 
-  // Check if window width is greater than or equal to 768px (md breakpoint in Tailwind)
+  // Check if window width is greater than or equal to 768px
   if (window.innerWidth >= 768) {
     mobileMenu.classList.remove("show");
     mobileProducts.classList.add("hidden");
@@ -80,7 +80,7 @@ function typeText() {
       index++;
       setTimeout(type, 65);
     } else {
-      cursor.style.display = "none"; // Hide cursor after typing is complete
+      cursor.style.display = "none";
     }
   }
 
@@ -102,7 +102,7 @@ function handleScrollAnimation() {
       });
     },
     {
-      threshold: window.innerWidth < 768 ? 0.1 : 0.4, // 10% for mobile, 40% for desktop
+      threshold: window.innerWidth < 768 ? 0.1 : 0.4,
     }
   );
 
