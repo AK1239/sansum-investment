@@ -77,7 +77,7 @@ function typeText() {
     if (index < text.length) {
       typedTextElement.textContent += text.charAt(index);
       index++;
-      setTimeout(type, 80);
+      setTimeout(type, 65);
     } else {
       cursor.style.display = "none"; // Hide cursor after typing is complete
     }
@@ -94,14 +94,14 @@ function handleScrollAnimation() {
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        // Only trigger animation when element is 40% visible
-        if (entry.intersectionRatio > 0.4) {
+        // Only trigger animation when element meets threshold
+        if (entry.intersectionRatio > (window.innerWidth < 768 ? 0.1 : 0.4)) {
           entry.target.classList.add("is-visible");
         }
       });
     },
     {
-      threshold: 0.4, // 40% visibility threshold
+      threshold: window.innerWidth < 768 ? 0.1 : 0.4, // 10% for mobile, 40% for desktop
     }
   );
 
@@ -109,3 +109,8 @@ function handleScrollAnimation() {
     observer.observe(section);
   });
 }
+
+// Update observer when window resizes
+window.addEventListener("resize", () => {
+  handleScrollAnimation();
+});
