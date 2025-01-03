@@ -160,3 +160,32 @@ function startCountersWhenVisible() {
     observer.observe(statsContainer);
   }
 }
+
+// Email functionality
+function sendEmail(e) {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+
+  emailjs
+    .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+      from_name: formData.get("firstName") + " " + formData.get("lastName"),
+      reply_to: formData.get("email"),
+      phone: formData.get("phone"),
+      message: formData.get("message"),
+    })
+    .then(
+      function (response) {
+        alert("Message sent successfully!");
+        form.reset();
+      },
+      function (error) {
+        alert("Failed to send message. Please try again.");
+      }
+    );
+}
+
+// Initialize EmailJS
+(function () {
+  emailjs.init("YOUR_USER_ID");
+})();
