@@ -96,13 +96,13 @@ function handleScrollAnimation() {
     (entries) => {
       entries.forEach((entry) => {
         // Only trigger animation when element meets threshold
-        if (entry.intersectionRatio > (window.innerWidth < 768 ? 0.1 : 0.4)) {
+        if (entry.intersectionRatio > (window.innerWidth < 768 ? 0.1 : 0.3)) {
           entry.target.classList.add("is-visible");
         }
       });
     },
     {
-      threshold: window.innerWidth < 768 ? 0.1 : 0.4,
+      threshold: window.innerWidth < 768 ? 0.1 : 0.3,
     }
   );
 
