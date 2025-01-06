@@ -5,6 +5,7 @@ module.exports = {
     "./contact/*.{html,js}",
     "./about/*.{html,js}",
     "./products/*.{html,js}",
+    "./products/water/*.{html,js}",
   ],
   theme: {
     extend: {
